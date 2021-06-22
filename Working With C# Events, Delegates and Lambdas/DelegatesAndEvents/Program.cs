@@ -10,7 +10,7 @@ namespace DelegatesAndEvents
         var worker = new Worker();
 
         //attach event to event handler
-        worker.WorkPerformed += Worker_WorkPerformed ;
+        worker.WorkPerformed += (s,e) => System.Console.WriteLine("hours worked: " + e.Hours + "  Task: "+ e.WorkType) ;
         worker.WorkCompleted += new EventHandler(Worker_WorkCompleted);
 
         worker.WorkCompleted += delegate(object sender , EventArgs e)
@@ -29,10 +29,12 @@ namespace DelegatesAndEvents
         {
             System.Console.WriteLine("Worker is done");
         }
-
+        /*
         private static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
         {
             System.Console.WriteLine("hours worked: " + e.Hours + "  Task: "+ e.WorkType);
         }
+        */
+
     }
 }
