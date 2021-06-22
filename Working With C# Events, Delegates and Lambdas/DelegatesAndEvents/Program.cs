@@ -2,7 +2,7 @@
 
 namespace DelegatesAndEvents
 {
-    public delegate void WorkPerformedHandler(int Hours , WorkType workType);
+    public delegate int WorkPerformedHandler(int Hours , WorkType workType);
     class Program
     {
         static void Main(string[] args)
@@ -12,12 +12,15 @@ namespace DelegatesAndEvents
             WorkPerformedHandler d3 = new WorkPerformedHandler(WorkPerformed3);
 
             d1 += d2 + d3 ;
-            d1(5 , WorkType.Golf);
+            var number = d1(5 , WorkType.Golf);
+            System.Console.WriteLine(number);
+            
         }
 
-        private static void WorkPerformed3(int hours, WorkType work)
+        private static int WorkPerformed3(int hours, WorkType work)
         {
             System.Console.WriteLine("WorkPerformed 3 called " + hours.ToString());
+            return hours + 3 ;
         }
 
         public static void DoWork(WorkPerformedHandler del)
@@ -25,14 +28,16 @@ namespace DelegatesAndEvents
             del(4 , WorkType.GoToMeeting);
         }
 
-        public static void WorkPerformed1(int hours , WorkType work)
+        public static int WorkPerformed1(int hours , WorkType work)
         {
             System.Console.WriteLine("WorkPerformed 1 called " + hours.ToString());
+            return hours + 1 ;
         }
 
-        public static void WorkPerformed2(int hours , WorkType work)
+        public static int WorkPerformed2(int hours , WorkType work)
         {
             System.Console.WriteLine("WorkPerformed 2 called " + hours.ToString());
+            return hours + 2 ;
         }
 
     }
