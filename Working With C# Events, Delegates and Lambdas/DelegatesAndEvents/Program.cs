@@ -2,43 +2,37 @@
 
 namespace DelegatesAndEvents
 {
-    public delegate int WorkPerformedHandler(int Hours , WorkType workType);
     class Program
     {
         static void Main(string[] args)
         {
-            WorkPerformedHandler d1 = new WorkPerformedHandler(WorkPerformed1);
-            WorkPerformedHandler d2 = new WorkPerformedHandler(WorkPerformed2);
-            WorkPerformedHandler d3 = new WorkPerformedHandler(WorkPerformed3);
 
-            d1 += d2 + d3 ;
-            var number = d1(5 , WorkType.Golf);
-            System.Console.WriteLine(number);
-            
-        }
+        var worker = new Worker();
 
-        private static int WorkPerformed3(int hours, WorkType work)
+        //attach event to event handler
+        worker.WorkPerformed += Worker_WorkPerformed ;
+        worker.WorkCompleted += new EventHandler(Worker_WorkCompleted);
+
+        worker.WorkCompleted += delegate(object sender , EventArgs e)
         {
-            System.Console.WriteLine("WorkPerformed 3 called " + hours.ToString());
-            return hours + 3 ;
+            System.Console.WriteLine(" Worker finished Working");
+        };
+
+        // detach event from event handler
+        worker.WorkCompleted -= Worker_WorkCompleted ;
+        
+        worker.DoWork(8,WorkType.GenerateReports);
+
         }
 
-        public static void DoWork(WorkPerformedHandler del)
+        private static void Worker_WorkCompleted(object sender, EventArgs e)
         {
-            del(4 , WorkType.GoToMeeting);
+            System.Console.WriteLine("Worker is done");
         }
 
-        public static int WorkPerformed1(int hours , WorkType work)
+        private static void Worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
         {
-            System.Console.WriteLine("WorkPerformed 1 called " + hours.ToString());
-            return hours + 1 ;
+            System.Console.WriteLine("hours worked: " + e.Hours + "  Task: "+ e.WorkType);
         }
-
-        public static int WorkPerformed2(int hours , WorkType work)
-        {
-            System.Console.WriteLine("WorkPerformed 2 called " + hours.ToString());
-            return hours + 2 ;
-        }
-
     }
 }
