@@ -1,0 +1,11 @@
+C:\Users\Ahmad Kater\Desktop\C#_PlayGround\Working With C# Events, Delegates and Lambdas\DelegatesAndEvents\bin\Debug\netcoreapp3.0\DelegatesAndEvents.exe
+C:\Users\Ahmad Kater\Desktop\C#_PlayGround\Working With C# Events, Delegates and Lambdas\DelegatesAndEvents\bin\Debug\netcoreapp3.0\DelegatesAndEvents.deps.json
+C:\Users\Ahmad Kater\Desktop\C#_PlayGround\Working With C# Events, Delegates and Lambdas\DelegatesAndEvents\bin\Debug\netcoreapp3.0\DelegatesAndEvents.runtimeconfig.json
+C:\Users\Ahmad Kater\Desktop\C#_PlayGround\Working With C# Events, Delegates and Lambdas\DelegatesAndEvents\bin\Debug\netcoreapp3.0\DelegatesAndEvents.runtimeconfig.dev.json
+C:\Users\Ahmad Kater\Desktop\C#_PlayGround\Working With C# Events, Delegates and Lambdas\DelegatesAndEvents\bin\Debug\netcoreapp3.0\DelegatesAndEvents.dll
+C:\Users\Ahmad Kater\Desktop\C#_PlayGround\Working With C# Events, Delegates and Lambdas\DelegatesAndEvents\bin\Debug\netcoreapp3.0\DelegatesAndEvents.pdb
+C:\Users\Ahmad Kater\Desktop\C#_PlayGround\Working With C# Events, Delegates and Lambdas\DelegatesAndEvents\obj\Debug\netcoreapp3.0\DelegatesAndEvents.csprojAssemblyReference.cache
+C:\Users\Ahmad Kater\Desktop\C#_PlayGround\Working With C# Events, Delegates and Lambdas\DelegatesAndEvents\obj\Debug\netcoreapp3.0\DelegatesAndEvents.AssemblyInfoInputs.cache
+C:\Users\Ahmad Kater\Desktop\C#_PlayGround\Working With C# Events, Delegates and Lambdas\DelegatesAndEvents\obj\Debug\netcoreapp3.0\DelegatesAndEvents.AssemblyInfo.cs
+C:\Users\Ahmad Kater\Desktop\C#_PlayGround\Working With C# Events, Delegates and Lambdas\DelegatesAndEvents\obj\Debug\netcoreapp3.0\DelegatesAndEvents.dll
+C:\Users\Ahmad Kater\Desktop\C#_PlayGround\Working With C# Events, Delegates and Lambdas\DelegatesAndEvents\obj\Debug\netcoreapp3.0\DelegatesAndEvents.pdb
