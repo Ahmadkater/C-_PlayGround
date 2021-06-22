@@ -10,8 +10,13 @@ namespace DelegatesAndEvents
             WorkPerformedHandler d1 = new WorkPerformedHandler(WorkPerformed1);
             WorkPerformedHandler d2 = new WorkPerformedHandler(WorkPerformed2);
 
-            d1.Invoke(5,WorkType.Golf);
-            d2(10,WorkType.GoToMeeting);
+            DoWork(d1);
+            DoWork(d2);
+        }
+
+        public static void DoWork(WorkPerformedHandler del)
+        {
+            del(4 , WorkType.GoToMeeting);
         }
 
         public static void WorkPerformed1(int hours , WorkType work)
