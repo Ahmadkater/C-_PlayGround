@@ -9,9 +9,15 @@ namespace DelegatesAndEvents
         {
             WorkPerformedHandler d1 = new WorkPerformedHandler(WorkPerformed1);
             WorkPerformedHandler d2 = new WorkPerformedHandler(WorkPerformed2);
+            WorkPerformedHandler d3 = new WorkPerformedHandler(WorkPerformed3);
 
-            DoWork(d1);
-            DoWork(d2);
+            d1 += d2 + d3 ;
+            d1(5 , WorkType.Golf);
+        }
+
+        private static void WorkPerformed3(int hours, WorkType work)
+        {
+            System.Console.WriteLine("WorkPerformed 3 called " + hours.ToString());
         }
 
         public static void DoWork(WorkPerformedHandler del)
