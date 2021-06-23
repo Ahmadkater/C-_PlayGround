@@ -14,7 +14,12 @@ namespace DelegatesAndEvents
         {
             action(x,y);
             System.Console.WriteLine("Arithmetic Action has been applied");
-            
+
+        }
+
+        public void ApplyFunc(int x , int y , Func<int,int,int> arithmeticFunc)
+        {
+            System.Console.WriteLine(arithmeticFunc(x,y));
         }
     }
     

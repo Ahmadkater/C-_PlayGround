@@ -8,6 +8,14 @@ namespace DelegatesAndEvents
         {
             var ArithmeticOperation = new ApplyArithmetic();
 
+            // Using Func<T,Tresult> , returns result
+            Func<int,int,int> addFunc = (x,y) => x + y ;
+            Func<int,int,int> subFunc = (x,y) => x - y ;
+            Func<int,int,int> mulFunc = (x,y) => x * y ;
+            ArithmeticOperation.ApplyFunc(18,10,subFunc);
+
+            System.Console.WriteLine(" ");
+
             // Using Action<T> , no return as it is void
             Action<int,int> addAction = (x,y) => System.Console.WriteLine( x + y );
             Action<int,int> subAction = (x,y) => System.Console.WriteLine( x - y );
