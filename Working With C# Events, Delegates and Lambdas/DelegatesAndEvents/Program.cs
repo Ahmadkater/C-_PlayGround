@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic ;
+using System.Linq ;
 
 namespace DelegatesAndEvents
 {
@@ -6,6 +8,27 @@ namespace DelegatesAndEvents
     {
         static void Main(string[] args)
         {
+
+            // Usage of Func<T,TResult> and lambdas to Query Objects
+            List<Customer> Customers = new List<Customer>
+            {
+                new Customer(10,"John","Snow","Pheonix"),
+                new Customer(50,"Arya","Stark","Pheonix"),
+                new Customer(30,"Sansa","Stark","Seattle"),
+                new Customer(500,"Night","King","NY City")
+            };
+
+            Func<Customer,bool> filter = c => c.City == "Pheonix" ;
+
+            var selectedCustomers = Customers
+            .Where(filter)
+            .OrderBy(c => c.FirstName);
+
+            foreach (var item in selectedCustomers)
+            {
+                System.Console.WriteLine(item);
+            }
+
             var ArithmeticOperation = new ApplyArithmetic();
 
             // Using Func<T,Tresult> , returns result
