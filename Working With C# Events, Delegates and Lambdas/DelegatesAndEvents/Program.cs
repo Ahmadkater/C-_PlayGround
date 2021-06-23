@@ -6,17 +6,25 @@ namespace DelegatesAndEvents
     {
         static void Main(string[] args)
         {
-            
+            var ArithmeticOperation = new ApplyArithmetic();
+
+            // Using Action<T> , no return as it is void
+            Action<int,int> addAction = (x,y) => System.Console.WriteLine( x + y );
+            Action<int,int> subAction = (x,y) => System.Console.WriteLine( x - y );
+            Action<int,int> mulAction = (x,y) => System.Console.WriteLine( x * y );
+            ArithmeticOperation.ApplyAction(3,5,addAction) ;
+
+            System.Console.WriteLine(" ");
+
+            // Using Custom Delegate
             ApplyArithmeticOperation add = (x, y) => x + y;
             ApplyArithmeticOperation sub = (x, y) => x - y;
             ApplyArithmeticOperation mul = (x, y) => x * y;
-
-            var ArithmeticOperation = new ApplyArithmetic();
-
             ArithmeticOperation.Apply(2, 4, mul);
 
             System.Console.WriteLine(" ");
 
+            // Event
             var worker = new Worker();
 
             //attach event to event handler

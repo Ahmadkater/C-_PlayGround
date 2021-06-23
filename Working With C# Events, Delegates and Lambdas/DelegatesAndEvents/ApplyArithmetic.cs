@@ -9,6 +9,13 @@ namespace DelegatesAndEvents
         {
             System.Console.WriteLine(del(x,y));
         }
+
+        public void ApplyAction(int x , int y , Action<int , int > action)
+        {
+            action(x,y);
+            System.Console.WriteLine("Arithmetic Action has been applied");
+            
+        }
     }
     
 }
