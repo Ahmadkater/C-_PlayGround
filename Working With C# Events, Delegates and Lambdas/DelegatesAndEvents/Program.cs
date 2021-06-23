@@ -6,22 +6,32 @@ namespace DelegatesAndEvents
     {
         static void Main(string[] args)
         {
+            
+            ApplyArithmeticOperation add = (x, y) => x + y;
+            ApplyArithmeticOperation sub = (x, y) => x - y;
+            ApplyArithmeticOperation mul = (x, y) => x * y;
 
-        var worker = new Worker();
+            var ArithmeticOperation = new ApplyArithmetic();
 
-        //attach event to event handler
-        worker.WorkPerformed += (s,e) => System.Console.WriteLine("hours worked: " + e.Hours + "  Task: "+ e.WorkType) ;
-        worker.WorkCompleted += new EventHandler(Worker_WorkCompleted);
+            ArithmeticOperation.Apply(2, 4, mul);
 
-        worker.WorkCompleted += delegate(object sender , EventArgs e)
-        {
-            System.Console.WriteLine(" Worker finished Working");
-        };
+            System.Console.WriteLine(" ");
 
-        // detach event from event handler
-        worker.WorkCompleted -= Worker_WorkCompleted ;
-        
-        worker.DoWork(8,WorkType.GenerateReports);
+            var worker = new Worker();
+
+            //attach event to event handler
+            worker.WorkPerformed += (s, e) => System.Console.WriteLine("hours worked: " + e.Hours + "  Task: " + e.WorkType);
+            worker.WorkCompleted += new EventHandler(Worker_WorkCompleted);
+
+            worker.WorkCompleted += delegate (object sender, EventArgs e)
+            {
+                System.Console.WriteLine(" Worker finished Working");
+            };
+
+            // detach event from event handler
+            worker.WorkCompleted -= Worker_WorkCompleted;
+
+            worker.DoWork(8, WorkType.GenerateReports);
 
         }
 
